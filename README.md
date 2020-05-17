@@ -13,14 +13,14 @@ If you're looking at this page... well you're already looking at a repository! Y
 
 The first thing to do is create a local copy of this git repository on your local machine so you can start working with it. This means you have to "clone" the repository. We can do this on the command line, so open your terminal and type in
 
-````git clone https://github.com/jeffouellette/CUBoulderHIGitTutorial.git````
+```git clone https://github.com/jeffouellette/CUBoulderHIGitTutorial.git```
 
 This will download the repository to your machine. Once it is done (it should only take a second) you should see a new directory called "CUBoulderHIGitTutorial". Now cd into this directory. Inside you will see the "src" and "include" directories.
 
 ### Optional: compiling the repository
 Compiling and running the code is optional. But if you intend to make your own utilities library, this can serve as a guide for how to compile and use it. To compile the code, run
 
-````make all````
+```make all```
 
 This will compile the functions in MyUtilities.cxx and Test.cxx into an executable under "bin/test".
 * MyUtilities.cxx is supposed to contain a set of helper functions, although right now it only has one which draws a label on a plot.
@@ -35,27 +35,27 @@ Now clone your new (empty) repository to your computer so that you can start add
 
 First let's setup a basic directory structure for your new repository, adding these to our git. We can do this very quickly with the following command:
 
-````mkdir bin lib include src````
+```mkdir bin lib include src```
 
 Now if you run "ls", you will see all of these folders. However, we only want git to keep track some of these directories. This is because in general it is not a good idea to store compiled code in a git repository, since compiled code will look differently to people with different computers, more or less. Therefore the "bin" and "lib" folders should not be tracked, whereas the directories where we will put source code should be.
 
 To make git track these files, execute the "git add" command:
 
-````git add src include````
+```git add src include```
 
-Now we can check that git is tracking these directories. Run a ````git status```` to ask git what has been updated in the repository. You should see both a list of files in green which have been added to git, and a list of files in red which are not being tracked by git. In general, running a ````git status```` is useful to double-check what changes you are committing to your repository.
+Now we can check that git is tracking these directories. Run a ```git status``` to ask git what has been updated in the repository. You should see both a list of files in green which have been added to git, and a list of files in red which are not being tracked by git. In general, running a ```git status``` is useful to double-check what changes you are committing to your repository.
 
 ## Committing your changes
 
 The last thing we need to do is commit our changes. You can think of committing as creating a tag for our code, which git should keep in its record. In order to commit, execute
 
-````git commit -m "My first commit!"````
+```git commit -m "My first commit!"```
 
 Every commit requires a descriptive message be provided. In this example "My first commit!" is the commit message. If you do not provide one git will open vim and force you to enter one!
 
 This has created a local commit of your repository. To reflect changes in the "master", we need to "push"; this is done with the command 
 
-````git push````
+```git push```
 
 Now if you go back to your git repository in your web browser, you should see all of these new folders we created.
 
@@ -63,15 +63,15 @@ Now if you go back to your git repository in your web browser, you should see al
 
 Ok, so now our project is set up and we have it linked to git. But we still don't have any code! Lets add a basic C++ file with some utilities function. To avoid writing our own code, lets just copy the code from the original repository. You can do this with the following command:
 
-````cp -r CUBoulderHIGitTutorial/* MyFirstRepository````
+```cp -r CUBoulderHIGitTutorial/* MyFirstRepository```
 
-Now we have to tell git to start tracking these new files. Try coming up with the right command on your own! If you need help, a ````git status```` command might be useful to tell you which files are not yet being tracked.
+Now we have to tell git to start tracking these new files. Try coming up with the right command on your own! If you need help, a ```git status``` command might be useful to tell you which files are not yet being tracked.
 
 Once you've done that, we still need to commit changes to the repository and push our changes. This can be done with an appropriate commit and push command.
 **Note that there is something missing from these commands -- I will leave it to you to figure out what is missing!**
 
-````git commit
-git push````
+```git commit
+git push```
 
 ## A git workflow
 
