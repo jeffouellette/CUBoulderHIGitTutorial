@@ -45,11 +45,23 @@ The last thing we need to do is commit our changes. You can think of committing 
 
 ````git commit -m "My first commit!"````
 
-Every commit requires a descriptive message be provided. In this example "My first commit!" is an example commit message. If you do not provide one git will open a text editor and force you to enter one!
+Every commit requires a descriptive message be provided. In this example "My first commit!" is the commit message. If you do not provide one git will open vim and force you to enter one!
 
 This has created a local commit of your repository. To reflect changes in the "master", we need to "push"; this is done with the command 
 
 ````git push````
+
+Now if you go back to your git repository in your web browser, you should see all of these new folders we created.
+
+## Adding new material to your repository
+
+Ok, so now our project is set up and we have it linked to git. But we still don't have any code! Lets start 
+
+## A git workflow
+
+There are many commands in git, but for everyday, personal usage, "add", "commit", and "push" will get you very far. In a more realistic, collaborative project a set of other commands are useful, such as "pull", "fetch", "checkout", and more. A diagram illustrating what these commands do to your local code is shown below.
+
+![Git commands](https://tapaswenipathak.files.wordpress.com/2016/02/xwvzt.png)
 
 
 
