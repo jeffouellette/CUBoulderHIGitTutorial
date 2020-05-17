@@ -1,0 +1,4 @@
+# tell git to ignore binary and shared library files
+bin
+lib
+canvas.pdf

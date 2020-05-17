@@ -3,7 +3,10 @@ LDFLAGS=`root-config --glibs` -Llib
 
 CC=$(CXX) $(CXXFLAGS) $(LDFLAGS)
 
-all : MyUtilities Test
+all : directories MyUtilities Test
+
+directories:
+	mkdir -p bin lib
 
 MyUtilities: src/MyUtilities.cxx
 	$(CC) -shared -o lib/libMyUtilities.so src/MyUtilities.cxx

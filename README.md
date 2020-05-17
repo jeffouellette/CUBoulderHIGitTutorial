@@ -1,29 +1,35 @@
 # CUBoulderHIGitTutorial
-Git tutorial for members of the CU Boulder HI group.
+This is a git tutorial for members of the CU Boulder HI group, or anyone unlucky enough to stumble upon this GitHub repository without already knowing how to use git. In this tutorial we will talk about why it is important for us to use git and try to get people started with their own git repositories.
 
-In this tutorial we will talk about what git is, why we need to use it, and how it can help us keep our code organized.
 You can think of git as similar to a "cloud storage" service like Google Drive, Microsoft Onedrive, etc. But git is NOT a way to backup your data -- instead its more like a "metadata" service for your code. It allows us to control, version, and share what code we are running. Think of it this way: how often have you had code written and working, only to make some set of changes 
 
-This tutorial will focus on getting people familiar with basic git commands, including cloning, committing, and pushing. We will practice by working with this dummy repository. Theres a lot of information out there to learn about git, and **Google is your friend**. For a concrete source, you can look through the free book here: https://git-scm.com/book/en/v2.
+This tutorial will focus on getting people familiar with basic git commands, including cloning, committing, and pushing. We will practice by working with this dummy repository and create our own repositories. Theres a lot of information out there to learn about git, and **Google is your friend**. For a concrete source, you can look through the free book here: https://git-scm.com/book/en/v2.
 
-I strongly recommend everyone create a GitHub account so that you can create your own repositories and start versioning your own code! In order to push to this repository I believe it will be required. It is **definitely** required in order to create your own repository (as we will do later in the tutorial).
+I strongly recommend everyone create a GitHub account so that you can create your own repositories and start versioning your own code! In order to push to this repository I believe it will be required. However it is **definitely** required in order to create your own repository (as we will do later in the tutorial).
 
 ## Cloning a repository
 
-If you're looking at this page... well you've already started to learn git, as this documentation is part of the git repository itself! You can think of a git repository as a container for a project. If you look above you can see a bunch of files including source code ("src"), library ("lib"), include, and binary ("bin") folders. These contain the C++ code and compiled code that we will need to build an example coding project. In this case, we will be building a generic utilities library where you can store useful functions. It is a good idea to have some sort of code base full of code that you will use repeatedly.
+If you're looking at this page... well you're already looking at a repository! You can think of a git repository as a container for a project. At the top of the pge, you can see a bunch of files including source code ("src") and include folders. These contain the C++ code that we will need to build an example coding project. In this case, the files describe a generic utilities library where you can store useful functions. It is a good idea to have some sort of code base full of code that you will use repeatedly.
 
-Right now you need to get this barebones git repository onto your local machine so you can start working with it. This means we have to "clone" the repository. We can do this on the command line, so open your favorite terminal and type in
+The first thing to do is create a local copy of this git repository on your local machine so you can start working with it. This means you have to "clone" the repository. We can do this on the command line, so open your terminal and type in
 
 ````git clone https://github.com/jeffouellette/CUBoulderHIGitTutorial.git````
 
-This will download the repository to your machine. You can see a new directory called "CUBoulderHIGitTutorial" -- cd into this directory.
-In order to run the code in this directory, you will need to execute the command
+This will download the repository to your machine. Once it is done (it should only take a second) you should see a new directory called "CUBoulderHIGitTutorial". Now cd into this directory. Inside you will see the "src" and "include" directories.
+
+### Optional: compiling the repository
+Compiling and running the code is optional. But if you intend to make your own utilities library, this can serve as a guide for how to compile and use it. To compile the code, run
 
 ````make all````
 
-This will compile the functions in MyUtilities.cxx and Test.cxx into an executable under "bin/test". This is the main code we will manage in our repostiory. But first, we all need to setup a new repository where we can start tracking our code. To do this, first we need to initialize it. Login to your github.com account (or which git service you prefer) and create a new repository. You can give it any name you like, such as RootUtilities or MyFirstRepository. If you have the option to make it public or private, it is better to make this one public as you will have a limited number of private repositories you can create.
+This will compile the functions in MyUtilities.cxx and Test.cxx into an executable under "bin/test".
+* MyUtilities.cxx is supposed to contain a set of helper functions, although right now it only has one which draws a label on a plot.
+* Test.cxx has one function "main" which means it is intended to be an executable, i.e. it can be run. It creates a canvas and then uses the MakeLabel function to label each corner of the plot.
 
-Now we need to clone your new (empty) repository to your computer so that you can start adding to it. You can find an http address for cloning on your repository page. Once you've done this, you will see another directory with your new repository inside of it. I recommend moving up one directory so that if you run an "ls" command you will see both "CUBoulderHIGitTutorial" and "MyFirstRepository" (or whatever name you gave it).
+## Creating a repository
+Now you are going to setup your own repository to practice some basic git commands with. But first you need to initialize one. Login to your github.com account (or whichever git service you prefer) and create a new repository. You can give it any name you like, such as RootUtilities or MyFirstRepository. If you have the option to make it public or private, it is better to make this one public as you will have a limited number of private repositories you can create.
+
+Now clone your new (empty) repository to your computer so that you can start adding to it. You can find an http address for cloning on your repository page. Once you've done this, you will see another directory with your new repository inside of it. I recommend moving up one directory first so that if you run an "ls" command you will see both "CUBoulderHIGitTutorial" and "MyFirstRepository" (or whatever name you gave it).
 
 ## Adding to a repository
 
@@ -31,13 +37,13 @@ First let's setup a basic directory structure for your new repository, adding th
 
 ````mkdir bin lib include src````
 
-Now if you run "ls", you will see all of these folders. However, we only want git to keep track some of these directories. This is because in general it is not a good idea to store compiled code in a git repository, since compiled code will look differently to people with different computers. Therefore the "bin" and "lib" folders should not be tracked, whereas the directories where we will put source code should be added.
+Now if you run "ls", you will see all of these folders. However, we only want git to keep track some of these directories. This is because in general it is not a good idea to store compiled code in a git repository, since compiled code will look differently to people with different computers, more or less. Therefore the "bin" and "lib" folders should not be tracked, whereas the directories where we will put source code should be.
 
 To make git track these files, execute the "git add" command:
 
 ````git add src include````
 
-Now we can check that git is tracking these directories. Run a ````git status```` to ask git what has been updated in the repository. You should see both a list of files in green which have been added to git, and a list of files in red which are not being tracked by git.
+Now we can check that git is tracking these directories. Run a ````git status```` to ask git what has been updated in the repository. You should see both a list of files in green which have been added to git, and a list of files in red which are not being tracked by git. In general, running a ````git status```` is useful to double-check what changes you are committing to your repository.
 
 ## Committing your changes
 
@@ -55,7 +61,17 @@ Now if you go back to your git repository in your web browser, you should see al
 
 ## Adding new material to your repository
 
-Ok, so now our project is set up and we have it linked to git. But we still don't have any code! Lets start 
+Ok, so now our project is set up and we have it linked to git. But we still don't have any code! Lets add a basic C++ file with some utilities function. To avoid writing our own code, lets just copy the code from the original repository. You can do this with the following command:
+
+````cp -r CUBoulderHIGitTutorial/* MyFirstRepository````
+
+Now we have to tell git to start tracking these new files. Try coming up with the right command on your own! If you need help, a ````git status```` command might be useful to tell you which files are not yet being tracked.
+
+Once you've done that, we still need to commit changes to the repository and push our changes. This can be done with an appropriate commit and push command.
+**Note that there is something missing from these commands -- I will leave it to you to figure out what is missing!**
+
+````git commit
+git push````
 
 ## A git workflow
 
@@ -63,5 +79,6 @@ There are many commands in git, but for everyday, personal usage, "add", "commit
 
 ![Git commands](https://tapaswenipathak.files.wordpress.com/2016/02/xwvzt.png)
 
+## Ignoring files
 
-
+You can tell git that certain files are meant to be ignored, for example it is not recommended to store executables on git. You can do this by listing the file names in a file called ".gitignore". Check out the .gitignore for the CUBoulderHIGitTutorial repository for an example.
