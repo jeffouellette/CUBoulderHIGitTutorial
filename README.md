@@ -71,7 +71,8 @@ Once you've done that, we still need to commit changes to the repository and pus
 **Note that there is something missing from these commands -- I will leave it to you to figure out what is missing!**
 
 ```git commit
-git push```
+git push
+```
 
 ## A git workflow
 
