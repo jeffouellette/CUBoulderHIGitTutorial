@@ -51,9 +51,16 @@ The last thing we need to do is commit our changes. You can think of committing 
 
 ```git commit -m "My first commit!"```
 
+#### Note
+If you have not used git before, you may receive a message where git asks "who you are" essentially. This means you need to edit your git configuration to store a name and email:
+```git config --global user.name "Jeff Ouellette"
+git config --global user.email "jeffrey.ouellette@colorado.edu"
+```
+Of course, replace my name with your own! Once you've done this try committing again.
+
 Every commit requires a descriptive message be provided. In this example "My first commit!" is the commit message. If you do not provide one git will open vim and force you to enter one!
 
-This has created a local commit of your repository. To reflect changes in the "master", we need to "push"; this is done with the command 
+This has created a local "version" of your repository. To reflect changes on the webpage, we need to "push"; this is done with the command 
 
 ```git push```
 
