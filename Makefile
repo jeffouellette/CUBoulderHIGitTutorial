@@ -1,7 +1,7 @@
 CXXFLAGS=-Ofast -g -Wall `root-config --cflags` -fPIC -Iinclude
 LDFLAGS=`root-config --glibs` -Llib
 
-CC=$(CXX) $(CXXFLAGS) $(LDFLAGS)
+CC=g++ $(CXXFLAGS) $(LDFLAGS)
 
 all : directories MyUtilities Test
 
