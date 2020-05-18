@@ -1,4 +1,8 @@
 # tell git to ignore binary and shared library files
 bin
 lib
-canvas.pdf
+# tell git to ignore all PDF files
+*.pdf
+# tell git to ignore all Root files
+*.root
+
