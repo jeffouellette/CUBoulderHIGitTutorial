@@ -1,4 +1,6 @@
 # CU Boulder HI Git Tutorial
+Hello world!
+
 This is a git tutorial for members of the CU Boulder HI group, or anyone unlucky enough to stumble upon this GitHub repository without already knowing how to use git. In this tutorial we will talk about why it is important for us to use git and try to get people started with their own git repositories.
 
 You can think of git as similar to a "cloud storage" service like Google Drive, Microsoft Onedrive, etc. But git is NOT a way to backup your data -- instead its more like a "metadata" service for your code. It allows us to control, version, and share what code we are running. Think of it this way: how often have you had code written and working, only to make some set of changes, and it suddenly breaks? Git provides a means to keep your "developing code" separate from the code which you already know is stable and working.
