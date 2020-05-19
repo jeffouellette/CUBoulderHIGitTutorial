@@ -53,7 +53,8 @@ The last thing we need to do is commit our changes. You can think of committing 
 
 #### Note
 If you have not used git before, you may receive a message where git asks "who you are" essentially. This means you need to edit your git configuration to store a name and email:
-```git config --global user.name "Jeff Ouellette"
+```
+git config --global user.name "Jeff Ouellette"
 git config --global user.email "jeffrey.ouellette@colorado.edu"
 ```
 Of course, replace my name with your own! Once you've done this try committing again.
@@ -77,7 +78,8 @@ Now we have to tell git to start tracking these new files. Try coming up with th
 Once you've done that, we still need to commit changes to the repository and push our changes. This can be done with an appropriate commit and push command.
 **Note that there is something missing from these commands -- I will leave it to you to figure out what is missing!**
 
-```git commit
+```
+git commit
 git push
 ```
 
