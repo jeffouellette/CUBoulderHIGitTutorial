@@ -3,6 +3,8 @@ This is a git tutorial for members of the CU Boulder HI group, or anyone unlucky
 
 You can think of git as similar to a "cloud storage" service like Google Drive, Microsoft Onedrive, etc. But git is NOT a way to backup your data -- instead its more like a "metadata" service for your code. It allows us to control, version, and share what code we are running. Think of it this way: how often have you had code written and working, only to make some set of changes, and it suddenly breaks? Git provides a means to keep your "developing code" separate from the code which you already know is stable and working.
 
+Lots of large, distributed computing projects use git to manage code distribution and development, including all of the experiments we work with! For example the sPHENIX core software is [on GitHub](https://github.com/sPHENIX-Collaboration), whereas the ATLAS software is visible to collaboration members on a CERN-propriatary [GitLab service](https://gitlab.cern.ch/atlas/athena).
+
 This tutorial will focus on getting people familiar with basic git commands, including cloning, committing, and pushing. We will be learning through example by creating our own practice repositories. Theres a lot of information out there to learn about git, and **Google is your friend**. For a concrete source, you can look through the free book here: https://git-scm.com/book/en/v2. We will simply focus on the basics here.
 
 I strongly recommend everyone create a GitHub account so that you can create your own repositories and start versioning your own code! In order to push to this repository I believe it will be required. However it is **definitely** required in order to create your own repository (as we will do later in the tutorial).
